@@ -1,5 +1,7 @@
 # food_delivery
 
+Code by Ikwogya James IJsoft Tech
+
 A new Flutter project.
 
 ## Getting Started
