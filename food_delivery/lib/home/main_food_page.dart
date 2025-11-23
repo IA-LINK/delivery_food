@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/home/food_page_body.dart';
 import 'package:food_delivery/wedgats/big_text.dart';
 import 'package:food_delivery/wedgats/small_text.dart';
 
@@ -24,10 +25,10 @@ class _MainFoodPageState extends State<MainFoodPage> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    BigText(text: "Nigeria", color: Colors.black),
-                    SmallText(text: "Kaduna", color: Colors.grey),
-                    Text("City"),
-                  ],
+                    BigText(text: "Nigeria", color: AppColors.mainColor),
+
+                    SmallText(text: "Olosoho", color: Colors.black54),
+                                     ],
                 ),
 
                 Container(
@@ -39,9 +40,11 @@ class _MainFoodPageState extends State<MainFoodPage> {
                   ),
                   child: const Icon(Icons.search, color: Colors.white),
                 ),
+                
               ],
             ),
           ),
+          FoodPageBody(),
         ],
       ),
     );
@@ -49,5 +52,5 @@ class _MainFoodPageState extends State<MainFoodPage> {
 }
 
 class AppColors {
-  static Color mainColor = Colors.black;
+  static Color mainColor = const Color.fromARGB(255, 80, 159, 212);
 }
