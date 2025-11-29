@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/wedgats/big_text.dart';
+import 'package:food_delivery/wedgats/icon_and_text_widgets.dart';
 import 'package:food_delivery/wedgats/small_text.dart';
+
+class AppColors {
+  static const Color mainColor = Color(0xFF89dad0);
+  static const Color iconColor1 = Color(0xFFffd28e);
+  static const Color iconColor2 = Color(0xFF9eecff);
+}
 
 class FoodPageBody extends StatefulWidget {
   const FoodPageBody({super.key});
@@ -13,7 +20,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.redAccent,
+      //color: Colors.redAccent,
       height: 320,
       child: PageView.builder(
         itemCount: 5,
@@ -53,28 +60,51 @@ class _FoodPageBodyState extends State<FoodPageBody> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  BigText(text: "Nigeria Side"),
+                  BigText(text: "IJSOFT Technologies Side"),
                   SizedBox(height: 10),
                   Row(
                     children: [
                       Wrap(
                         children: List.generate(
                           10,
-                          (index) => Icon(
-                            Icons.star,
-                            color: Colors.orange,
-                            size: 15,
-                          ),
+                          (index) {
+                            return Icon(
+                              Icons.star,
+                              color: AppColors.mainColor,
+                              size: 15,
+                            );
+                          },
                         ),
                       ),
+      
                       SizedBox(width: 10),
                       SmallText(text: "4.5"),
                       SizedBox(width: 10),
                       SmallText(text: "1287"),
                       SizedBox(width: 10),
-                      SmallText(text: "comments"),
+                      SmallText(text: "comments - IJsoft Tech"),
                     ],
                   ),
+                  SizedBox(height: 20),
+                  Row(
+                    children: [
+                      IconAndTextWidgets(icon: Icons.circle_sharp,
+                          text: "Normal", 
+
+                          iconColor: AppColors.iconColor1,
+                          color: AppColors.iconColor1),
+                      IconAndTextWidgets(icon: Icons.location_on,
+                          text: "1.7km", 
+
+                      iconColor: AppColors.mainColor,
+                      color: AppColors.mainColor),
+
+                      IconAndTextWidgets(icon: Icons.access_time_rounded,
+                          text: "32min",
+                          iconColor: AppColors.iconColor2,
+                          color: AppColors.iconColor2),
+                    ],
+                  )
                 ],
               ),
             ),
